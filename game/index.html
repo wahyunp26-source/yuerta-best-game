@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen Tide — a lantern-fish arcade</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #02070f;
+    color: #e8fbff;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    min-height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+  }
+  h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #ffc94d;
+    text-shadow: 0 0 18px rgba(255, 201, 77, 0.55);
+  }
+  h1 span { color: #37e6ff; text-shadow: 0 0 18px rgba(55, 230, 255, 0.55); }
+  .stage {
+    width: min(1280px, 100%);
+    border: 1px solid rgba(55, 230, 255, 0.35);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 42px rgba(55, 230, 255, 0.16), 0 0 90px rgba(0, 0, 0, 0.6);
+    background: #04101f;
+  }
+  canvas { display: block; width: 100%; height: auto; }
+  .help {
+    font-size: 13px;
+    color: #9fb8c8;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 1280px;
+  }
+  .help b { color: #e8fbff; }
+  .help kbd {
+    background: #0a1a2e;
+    border: 1px solid #2b4a63;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: inherit;
+    color: #7df3ff;
+  }
+</style>
+</head>
+<body>
+  <h1>Lumen <span>Tide</span></h1>
+  <div class="stage">
+    <canvas id="game" width="1280" height="720" aria-label="Lumen Tide game canvas"></canvas>
+  </div>
+  <p class="help">
+    <b>WASD / Arrow keys</b> swim &nbsp;•&nbsp; <kbd>Space</kbd> or <b>click</b> pulse blast &nbsp;•&nbsp;
+    <kbd>P</kbd> pause &nbsp;•&nbsp; <kbd>R</kbd> restart &nbsp;•&nbsp; <kbd>M</kbd> mute<br>
+    Gather light orbs to clear all <b>10 waves</b>. Dodge the void wisps — drifters, chasers, splitters.
+    Three hits and the light fades. No downloads, no network: everything you see is drawn live.
+  </p>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
